@@ -1,6 +1,6 @@
-### `npm install`
+`npm install`
 
-### `npm start`
+`npm start`
 
 To reproduce:
 1. Click on Keep Focus on the first keystroke/Lose Focus on the first keystroke
@@ -14,6 +14,8 @@ To reproduce:
 
 **Actual behavior**
 
-Select control should be visible and with the focus, after pressing any letter the the control lose the focus
+3b. Select control should be visible and with the focus, after pressing any letter the the control lose the focus
 
-3b. The code is [available in codesandbox]() but currently is not working.
+
+
+The code is [available in codesandbox](https://codesandbox.io/s/select-lost-first-focus-lf4df4) but the sandbox is throwing a weird error and currently is not working.
