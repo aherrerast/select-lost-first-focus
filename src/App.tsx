@@ -125,36 +125,50 @@ const InvoiceTemplateTable = observer((props: InvoiceTemplateTableProps) => {
 });
 
 interface InvoiceTemplateProps {
-  tableState: TableState<ItemModel, number>;
+  keepFocus: boolean;
 }
 
 const InvoiceTemplate = observer((props: InvoiceTemplateProps) => {
-  return (
-    /*
-     * Steven: Add the takeover break the focus
-     */
+
+  const [tableState] = useState(getTableState());
+
+  return props.keepFocus ? (
+    <div>
+      <InvoiceTemplateTable tableState={tableState} />
+    </div>
+  ) : (
+    /**
+    * If the Takeover is replaced by a div it works fine
+    */
     <Takeover title="test">
       <Takeover.Section>
-        <InvoiceTemplateTable tableState={props.tableState} />
+        <InvoiceTemplateTable tableState={tableState} />
       </Takeover.Section>
     </Takeover>
   );
 });
 
 const RootInvoiceTemplateViewer = observer(() => {
-  const [viewTemplate, setViewTemplate] = useState(false);
-  const [ajustmentInvoicesTable] = useState(getTableState());
-
+  const [focusBehavior, setFocusBehavior] = useState("");
   return (
     <div>
       <button
         onClick={() => {
-          setViewTemplate(!viewTemplate);
+          setFocusBehavior("keepfocus");
         }}
       >
-        Edit
+        Keep Focus while first keystroke
       </button>
-      {viewTemplate && <InvoiceTemplate tableState={ajustmentInvoicesTable} />}
+
+      <button
+        onClick={() => {
+          setFocusBehavior("losefocus");
+        }}
+      >
+        Lose Focus on first keystroke
+      </button>
+      {focusBehavior === "keepfocus" && <InvoiceTemplate keepFocus={true} />}
+      {focusBehavior === "losefocus" && <InvoiceTemplate keepFocus={false} />}
     </div>
   );
 });
