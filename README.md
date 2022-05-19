@@ -9,6 +9,7 @@ To reproduce:
 ![MEM-6650](https://user-images.githubusercontent.com/99763561/169349155-0b946e7d-e4ec-4928-8032-e44e533d16e3.jpg)
 
 **Expected behavior:**
+
 3a. Select control should be visible and with the focus, after pressing any letter the control should keep the focus and filter the result
 
 **Actual behavior**
