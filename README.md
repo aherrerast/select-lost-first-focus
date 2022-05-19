@@ -10,11 +10,11 @@ To reproduce:
 
 **Expected behavior:**
 
-3a. Select control should be visible and with the focus, after pressing any letter the control should keep the focus and filter the result
+3a. Select control should be visible and with the focus, after pressing any letter the control should keep the focus and filter the result.
 
 **Actual behavior**
 
-3b. Select control should be visible and with the focus, after pressing any letter the the control lose the focus
+3b. Select control is visible and with the focus, after pressing any letter the control lose the focus.
 
 
 
