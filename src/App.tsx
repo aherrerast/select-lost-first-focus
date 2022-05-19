@@ -157,7 +157,7 @@ const RootInvoiceTemplateViewer = observer(() => {
           setFocusBehavior("keepfocus");
         }}
       >
-        Keep Focus while first keystroke
+        Keep Focus on the first keystroke
       </button>
 
       <button
@@ -165,7 +165,7 @@ const RootInvoiceTemplateViewer = observer(() => {
           setFocusBehavior("losefocus");
         }}
       >
-        Lose Focus on first keystroke
+        Lose Focus on the first keystroke
       </button>
       {focusBehavior === "keepfocus" && <InvoiceTemplate keepFocus={true} />}
       {focusBehavior === "losefocus" && <InvoiceTemplate keepFocus={false} />}
